@@ -142,15 +142,15 @@
       100% { transform: scale(1.1) rotate(0deg); }
     }
 
-    /* Letter styles - now a big envelope */
+    /* Letter styles - now portrait envelope */
     .letter {
       display: none;
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 500px; /* Bigger width */
-      height: 350px; /* Bigger height */
+      width: 350px; /* Narrower width for portrait */
+      height: 500px; /* Taller height for portrait */
       z-index: 100;
       perspective: 1000px;
       opacity: 0;
@@ -203,7 +203,7 @@
       background: #fff;
       transform: rotateY(180deg);
       border: 2px solid #8b4513;
-      text-align: left;
+      text-align: justify;
       justify-content: flex-start;
       position: relative; /* For absolute positioning of mini pic */
     }
@@ -211,11 +211,13 @@
     .mini-pic {
       position: absolute;
       bottom: 10px;
-      left: 10px;
-      width: 60px; /* Mini size */
+      left: 50%;
+      transform: translateX(-50%);
+      width: 250px; /* Bigger size */
       height: auto;
-      border-radius: 5px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+      max-width: 60%; /* Ensure it fits within envelope */
     }
 
     footer {
@@ -254,7 +256,8 @@
   <audio id="bgm" loop>
     <source src="pasko_ofA1MrX9.mp3" type="audio/mpeg" />
   </audio>
-<h1>🎄 Merry Christmas! 🎄</h1>
+
+  <h1>🎄 Merry Christmas! 🎄</h1>
   <p>
     Wishing you warmth, joy, and lots of love this Christmas season.
     Thank you for being part of my life ❤️
@@ -277,7 +280,7 @@
         <p>Dear Person,</p>
         <p>Wishing you a magical Christmas filled with love, joy, hope, and all the warmth of the season. May you and your family's holidays be merry and bright! ❤️</p>
         <p>With love,<br>Your Void ✨</p>
-        <img src="santa.jpg" alt="Mini Picture" class="mini-pic"> <!-- Mini picture at bottom left -->
+        <img src="santa.jpg" alt="Mini Picture" class="mini-pic"> <!-- Bottom center picture -->
       </div>
     </div>
   </div>
